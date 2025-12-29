@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Managing a Case: Template</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Load Inter Font */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f7f7f7; }
+
+        /* Custom Colors based on the provided brand palette */
+        /* #1f2a52 (Deep Navy) - Primary Dark */
+        .brand-primary-dark { color: #1f2a52; }
+        .bg-brand-primary-dark { background-color: #1f2a52; }
+        
+        /* #00bec7 (Bright Teal) - Accent Bright (Accordion Headers) */
+        .bg-brand-accent-bright { background-color: #00bec7; }
+        
+        /* #d2f0f0 (Very Light Teal/Mint) - Light Accent (Guidance Box Background) */
+        .bg-brand-light-accent { background-color: #d2f0f0; }
+        
+        /* #abb5bf (Muted Blue-Gray) - Muted Text */
+        .brand-muted { color: #abb5bf; }
+        
+        /* Custom Accordion Styling for smooth transition */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-in-out;
+        }
+        /* Uses a large max-height for smooth transition */
+        .accordion-item.active .accordion-content {
+            max-height: 1000px; 
+        }
+        
+        /* Custom card styling for shadow/border and minimum height */
+        .card-panel {
+            border-radius: 0.75rem; /* rounded-xl */
+            padding: 1.5rem; /* p-6 */
+            min-height: 350px;
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-8">
+
+    <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-6 sm:p-10">
+
+        <!-- Title and Introduction (Using Primary Dark and Muted colors) -->
+        <h1 class="text-3xl font-extrabold text-center mb-2 brand-primary-dark">
+            Managing a Case: Template
+        </h1>
+        <p class="text-center brand-muted mb-8 max-w-3xl mx-auto">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis nunc sit amet lacus laoreet volutpat. Click on each scenario below to analyse the risks and determine the best professional practice.
+        </p>
+        
+        <!-- GUIDANCE SECTION: Structured Approach to Resolution (Using Light Accent Color) -->
+        <div class="bg-brand-light-accent p-6 rounded-xl border border-gray-200 mb-8 shadow-sm">
+            <h2 class="text-xl font-bold brand-primary-dark mb-3">The Main Points about the Case, Principle or Process</h2>
+            <p class="text-sm brand-primary-dark mb-4">
+                Mauris commodo vitae ipsum et lacinia. Praesent eget nisl ut turpis. Nam sed est sed elit porttitor vehicula.
+            </p>
+            <ol class="list-decimal list-inside space-y-2 brand-primary-dark font-medium ml-4">
+                <li><strong class="brand-primary-dark">Vestibulum Eget:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit (e.g., Principium A vs. Principium B).</li>
+                <li><strong class="brand-primary-dark">Morbi Tincidunt:</strong> Determine qui afficietur hac decisione.</li>
+                <li><strong class="brand-primary-dark">Phasellus Ac Odio:</strong> List omnes actionum cursum possibilitates.</li>
+                <li><strong class="brand-primary-dark">Quisque Nec Felis:</strong> Assess omnes actionum cursum.</li>
+                <li><strong class="brand-primary-dark">Nunc Vel Orci:</strong> Consult cum praefecto vel administratione.</li>
+                <li><strong class="brand-primary-dark">Act and Document:</strong> Implementa et documenta totum processum.</li>
+            </ol>
+        </div>
+
+        <!-- ACCORDION CONTAINER -->
+        <div id="accordion-container" class="space-y-4">
+
+            <!-- SCENARIO 1: Loyalty vs. Confidentiality Duty (Using Bright Accent for Header) -->
+            <div class="accordion-item bg-white rounded-xl shadow-md border border-gray-200">
+                <button class="accordion-header flex items-center justify-between w-full p-4 bg-brand-accent-bright text-white font-semibold rounded-xl hover:bg-opacity-90 transition duration-150" onclick="toggleAccordion(this)">
+                    <span class="flex items-center text-lg">
+                        <!-- Lock Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                        </svg>
+                        Scenario 1: Lorem Ipsum Principium A vs. Principium B
+                    </span>
+                    <!-- Dropdown Arrow Icon -->
+                    <svg class="w-5 h-5 transform transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div class="accordion-content">
+                    <div class="p-6">
+                        <p class="mb-4 brand-muted">
+                            <strong>Dilemma: Identifying the Conflict</strong> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore. The conflict is <strong>Principium C (Lorem Ipsum)</strong> versus <strong>Principium D (Ipsum Dolor)</strong>. The immediate decision is whether to prioritize team harmony or the patient's privacy rights.
+                        </p>
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            <!-- COMMON RISKS (RED) -->
+                            <div class="card-panel border-2 border-red-500 bg-red-50">
+                                <h3 class="flex items-center text-red-700 font-bold mb-4 text-xl">
+                                    <!-- Circular Exclamation Mark Icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    Poor Practice
+                                </h3>
+                                <ul class="list-disc list-outside space-y-3 pl-5 brand-muted">
+                                    <li><strong>Ignorare Contradictionem:</strong> Repellat in voluptatem sint ut et. Qui sint ut in omnis voluptas est. <strong>Lex Placeholder</strong>.</li>
+                                    <li><strong>Dirigo Confrontatio:</strong> Ut reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</li>
+                                    <li><strong>Fides Ruptus:</strong> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</li>
+                                </ul>
+                            </div>
+                            <!-- BEST PRACTICE (GREEN) -->
+                            <div class="card-panel border-2 border-green-500 bg-green-50">
+                                <h3 class="flex items-center text-green-700 font-bold mb-4 text-xl">
+                                    <!-- Checkmark Icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    Best Practice
+                                </h3>
+                                <ul class="list-disc list-outside space-y-3 pl-5 brand-muted">
+                                    <li><strong>Prioritise Ipsum Dolor (Principium D):</strong> Qui ratione quia in molestiae rerum voluptas in. Non sit quia velit animi enim.</li>
+                                    <li><strong>Sequor Consilium:</strong> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</li>
+                                    <li><strong>Documentatio:</strong> Sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</li>
+                                    <li><strong>Ethical Framework:</strong> Adhering to the <strong>Regulae Morum</strong> ensures the practice environment remains trustworthy and legally compliant.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SCENARIO 2: Process Integrity & Failure to Confirm Patient/Options -->
+            <div class="accordion-item bg-white rounded-xl shadow-md border border-gray-200">
+                <button class="accordion-header flex items-center justify-between w-full p-4 bg-brand-accent-bright text-white font-semibold rounded-xl hover:bg-opacity-90 transition duration-150" onclick="toggleAccordion(this)">
+                    <span class="flex items-center text-lg">
+                        <!-- Clipboard Check Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                        </svg>
+                        Scenario 2: Lorem Ipsum
+                    </span>
+                    <!-- Dropdown Arrow Icon -->
+                    <svg class="w-5 h-5 transform transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div class="accordion-content">
+                    <div class="p-6">
+                        <p class="mb-4 brand-muted">
+                            <strong>Dilemma: Identifying the Conflict</strong> Proin eget nisl. Ut non turpis. Nam sed est sed elit porttitor vehicula. Sed quis massa. Cras vitae purus. The conflict is between the duty to provide correct information (<strong>Principium E</strong>) and the immediate duty of safety and proper process (<strong>Principium F</strong>).
+                        </p>
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            <!-- COMMON RISKS (RED) -->
+                            <div class="card-panel border-2 border-red-500 bg-red-50">
+                                <h3 class="flex items-center text-red-700 font-bold mb-4 text-xl">
+                                    <!-- Circular Exclamation Mark Icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    Poor Practice
+                                </h3>
+                                <ul class="list-disc list-outside space-y-3 pl-5 brand-muted">
+                                    <li><strong>Aliquam Ultricies Tellus:</strong> Quia eius et quis aut. Qui sint ut in omnis voluptas est, assumenda rerum voluptas in.</li>
+                                    <li><strong>Failing to Identify Options:</strong> Rem repellendus in voluptatem sint. Voluptate velit esse cillum dolore eu fugiat nulla pariatur.</li>
+                                    <li><strong>Ruptura Principium E:</strong> Commodo augue, at faucibus lectus massa vitae libero. Phasellus vitae lectus a dolor.</li>
+                                    <li><strong>Charting Error:</strong> Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</li>
+                                </ul>
+                            </div>
+                            <!-- BEST PRACTICE (GREEN) -->
+                            <div class="card-panel border-2 border-green-500 bg-green-50">
+                                <h3 class="flex items-center text-green-700 font-bold mb-4 text-xl">
+                                    <!-- Checkmark Icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    Best Practice
+                                </h3>
+                                <ul class="list-disc list-outside space-y-3 pl-5 brand-muted">
+                                    <li><strong>Actus Statim (Principium F):</strong> Ad minim veniam, quis nostrud exercitation ullamco laboris.</li>
+                                    <li><strong>Re-confirm Stakeholder Identity:</strong> Eos qui ratione quia in molestiae rerum. Corporis ut velit animi enim.
+                                    </li>
+                                    <li><strong>Identify Correct Options (Principium E & Principium G):</strong> Qui dolorem ipsum quia dolor sit amet.
+                                        <ol class="list-lower-alpha list-inside mt-1 ml-4 space-y-1">
+                                            <li><strong>Option A:</strong> Lorem Ipsum Therapy (Optimal).</li>
+                                            <li><strong>Option B:</strong> Extractio (Intermediate/Alternative).</li>
+                                            <li><strong>Option C:</strong> Observatio/Referral (If warranted).</li>
+                                        </ol>
+                                    </li>
+                                    <li><strong>Comprehensive Documentation:</strong> Sint occaecat cupidatat non proident.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SCENARIO 3: Undocumented Procedure vs. Immediate Need -->
+            <div class="accordion-item bg-white rounded-xl shadow-md border border-gray-200">
+                <button class="accordion-header flex items-center justify-between w-full p-4 bg-brand-accent-bright text-white font-semibold rounded-xl hover:bg-opacity-90 transition duration-150" onclick="toggleAccordion(this)">
+                    <span class="flex items-center text-lg">
+                        <!-- Documentation/Paper Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M10 16h.01" />
+                        </svg>
+                        Scenario 3: Lorem Ipsum
+                    </span>
+                    <!-- Dropdown Arrow Icon -->
+                    <svg class="w-5 h-5 transform transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div class="accordion-content">
+                    <div class="p-6">
+                        <p class="mb-4 brand-muted">
+                            <strong>Dilemma:</strong> Curabitur mollis, quam non mollis iaculis, ante justo commodo augue, at faucibus lectus massa vitae libero. Phasellus vitae lectus a dolor gravida commodo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                        </p>
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            <!-- COMMON RISKS (RED) -->
+                            <div class="card-panel border-2 border-red-500 bg-red-50">
+                                <h3 class="flex items-center text-red-700 font-bold mb-4 text-xl">
+                                    <!-- Circular Exclamation Mark Icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    Poor Practice
+                                </h3>
+                                <ul class="list-disc list-outside space-y-3 pl-5 brand-muted">
+                                    <li><strong>Elementum A Deest:</strong> Aut in reiciendis. Dolor in reprehenderit in voluptate.</li>
+                                    <li><strong>Ratio Debilis:</strong> Ut enim ad minim veniam, quis nostrud exercitation.</li>
+                                    <li><strong>Continuity Deletum:</strong> Sunt in culpa qui officia deserunt.</li>
+                                </ul>
+                            </div>
+                            <!-- BEST PRACTICE (GREEN) -->
+                            <div class="card-panel border-2 border-green-500 bg-green-50">
+                                <h3 class="flex items-center text-green-700 font-bold mb-4 text-xl">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    Best Practice
+                                </h3>
+                                <ul class="list-disc list-outside space-y-3 pl-5 brand-muted">
+                                    <li><strong>Prioritise Documentatio:</strong> Sed do eiusmod tempor incididunt ut labore et dolore.</li>
+                                    <li><strong>Regula Aurea:</strong> Si non scriptum, non factum. Excepteur sint occaecat cupidatat non proident.</li>
+                                    <li><strong>Tempus Procuratio:</strong> Quis nostrud exercitation ullamco laboris.</li>
+                                    <li><strong>Ethical Duty:</strong> The duty to provide <strong>Principium G</strong> must be balanced with <strong>Principium H</strong>.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- JavaScript for Accordion Logic (Unchanged) -->
+    <script>
+        /**
+         * Toggles the active state and max-height for an accordion item.
+         * Closes all other open items.
+         * @param {HTMLElement} button - The button element that was clicked (the header).
+         */
+        function toggleAccordion(button) {
+            const item = button.closest('.accordion-item');
+            const content = item.querySelector('.accordion-content');
+            const isActive = item.classList.contains('active');
+
+            // Close all other items and reset their header rounding
+            document.querySelectorAll('.accordion-item').forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                    otherItem.querySelector('.accordion-content').style.maxHeight = null;
+                    
+                    // Ensure closed headers are fully rounded
+                    const otherHeader = otherItem.querySelector('.accordion-header');
+                    otherHeader.classList.add('rounded-xl');
+                    otherHeader.classList.remove('rounded-t-xl');
+                }
+            });
+
+            // Toggle the clicked item
+            if (isActive) {
+                // Close it
+                item.classList.remove('active');
+                content.style.maxHeight = null;
+                // Add full rounded corners back to the closed header
+                button.classList.add('rounded-xl');
+                button.classList.remove('rounded-t-xl');
+
+            } else {
+                // Open it
+                item.classList.add('active');
+                // Set max-height using scrollHeight for smooth transition
+                content.style.maxHeight = content.scrollHeight + "px";
+                // Remove bottom rounded corners from the open header
+                button.classList.remove('rounded-xl');
+                button.classList.add('rounded-t-xl');
+            }
+        }
+        
+        // Initial setup to ensure all headers start with full rounding if closed
+        window.onload = function() {
+            document.querySelectorAll('.accordion-item').forEach(item => {
+                const header = item.querySelector('.accordion-header');
+                if (!item.classList.contains('active')) {
+                    header.classList.add('rounded-xl');
+                    header.classList.remove('rounded-t-xl');
+                }
+            });
+        };
+    </script>
+
+</body>
+</html>
